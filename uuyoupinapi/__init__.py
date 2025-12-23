@@ -7,7 +7,7 @@ import time
 import logging
 import uuid
 
-import requests
+from curl_cffi import requests
 
 from uuyoupinapi.UUApiCrypt import UUApiCrypt
 from uuyoupinapi import models
@@ -60,7 +60,7 @@ class UUAccount:
         """
         :param token: 通过抓包获得的token
         """
-        self.session = requests.Session()
+        self.session = requests.Session(impersonate="chrome")
         self.proxy = proxy
         if isinstance(proxy, dict):
             self.session.proxies = proxy
