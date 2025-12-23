@@ -4,15 +4,15 @@ import json
 import random
 import string
 import time
+import logging
 import uuid
 
 import requests
 
 from uuyoupinapi.UUApiCrypt import UUApiCrypt
-from utils.logger import PluginLogger
 from uuyoupinapi import models
 
-logger = PluginLogger("uuyoupinapi")
+logger = logging.getLogger("uuyoupinapi")
 
 
 def generate_random_string(length):
